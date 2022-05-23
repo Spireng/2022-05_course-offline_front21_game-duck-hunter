@@ -1,0 +1,235 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    counter-reset: score;
+    background-image: url("img/games_duck_hunt_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 bottom;
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    color: #fff;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.duck-left,
+.duck-right {
+    width: 62px;
+    height: 56px;
+    position: relative;
+    overflow: hidden;
+    left: -10%;
+    top: 300px;
+}
+
+.duck-left label,
+.duck-right label {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    cursor: url('img/icon_crosshair.png'), auto;
+}
+
+.duck-left label {
+    background-image: url("img/duck_hunt_left.gif");
+}
+
+.duck-right label {
+    background-image: url("img/duck_hunt_right.gif");
+}
+
+.duck-left input,
+.duck-right input {
+    position: absolute;
+    left: -80px;
+}
+
+
+.duck-left input:checked,
+.duck-right input:checked {
+    counter-increment: score;
+
+}
+
+.duck-left input:checked + label,
+.duck-right input:checked + label {
+    display: none;
+}
+
+.count {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.count::after {
+    content: counter(score);
+}
+
+.duck01 {
+    animation: fly-01 linear 16s;
+}
+
+.duck02 {
+    animation: fly-02 ease 14s 2s;
+}
+
+.duck03 {
+    animation: fly-03 linear 12s 4s;
+}
+
+.duck04 {
+    animation: fly-04 cubic-bezier(.74,-0.06,.98,.38) 10s 6s;
+}
+
+.duck05 {
+    animation: fly-05 linear 8s 8s;
+}
+
+.duck06 {
+    animation: fly-06 ease-in-out 15s 1s;
+}
+
+.duck07 {
+    animation: fly-07 linear 13s 3s;
+}
+
+.duck08 {
+    animation: fly-08 ease-in 11s 5s;
+}
+
+.duck09 {
+    animation: fly-09 linear 9s 7s;
+}
+
+.duck10 {
+    animation: fly-10 ease-out 7s 9s;
+}
+
+@keyframes fly-01 {
+    0% {
+        left: -10%;
+        top: 0vh;
+    }
+    100%{
+        left: 110%;
+        top: 10vh;
+    }
+}
+
+@keyframes fly-02 {
+    0% {
+        left: -10%;
+        top: 22vh;
+    }
+    100%{
+        left: 110%;
+        top: -40vh;
+    }
+}
+
+@keyframes fly-03 {
+    0% {
+        left: -10%;
+        top: -20vh;
+    }
+    100%{
+        left: 110%;
+        top: 50vh;
+    }
+}
+
+@keyframes fly-04 {
+    0% {
+        left: -10%;
+        top: 34vh;
+    }
+    100%{
+        left: 110%;
+        top: 0vh;
+    }
+}
+
+@keyframes fly-05 {
+    0% {
+        left: -10%;
+        top: 24vh;
+    }
+    100%{
+        left: 110%;
+        top: 0vh;
+    }
+}
+
+@keyframes fly-06 {
+    0% {
+        left: 110%;
+        top: -10vh;
+    }
+    100%{
+        left: -10%;
+        top: -40vh;
+    }
+}
+
+@keyframes fly-07 {
+    0% {
+        left: 110%;
+        top: -30vh;
+    }
+    100%{
+        left: -10%;
+        top: 0vh;
+    }
+}
+
+@keyframes fly-08 {
+    0% {
+        left: 110%;
+        top: 5vh;
+    }
+    100%{
+        left: -10%;
+        top: -10vh;
+    }
+}
+
+@keyframes fly-09 {
+    0% {
+        left: 110%;
+        top: 20vh;
+    }
+    100%{
+        left: -10%;
+        top: -50vh;
+    }
+}
+
+@keyframes fly-10 {
+    0% {
+        left: 110%;
+        top: -16vh;
+    }
+    100%{
+        left: -10%;
+        top: -16vh;
+    }
+}
+
+
